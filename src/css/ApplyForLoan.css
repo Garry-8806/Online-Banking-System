@@ -1,0 +1,96 @@
+/* LoanApplicationForm.css */
+
+.form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='number'],
+  select,
+  button {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type='file'] {
+    margin-top: 5px;
+  }
+  
+  select {
+    appearance: none; /* Remove default dropdown arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="#000" d="M4.606 7.727l5.566 5.665 5.565-5.665 1.414 1.414-6.979 7.071-6.978-7.071 1.412-1.414z"/></svg>'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  span {
+    margin-left: 10px;
+    font-size: 15px;
+    color: #1d70be;
+  }
+  
+  .documents-section {
+    margin: 10px;
+    
+  }
+  .MD{
+    font-weight: bolder;
+    font-size: larger;
+  }
+  
+  .documents-label {
+    text-align: left;
+  }
+  
+  /* Blinking animation for interest rate */
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .blinking {
+    animation: blink 1s infinite;
+  }
+  

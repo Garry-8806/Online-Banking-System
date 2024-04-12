@@ -1,0 +1,71 @@
+/* LoanPage.css */
+
+::-webkit-input-placeholder {
+  font-size: 2.4vh; /* Adjust placeholder font size */
+}
+
+.container_regfrm_container_parent h3 {
+  text-align: center;
+  border: 1px solid rgba(44, 78, 134, 0.5);
+  background-color: #c5d9e2;
+  font-size: 2.5vh; /* Adjust heading font size */
+  color: rgb(44, 78, 134);
+  font-weight: 500;
+  padding: 15px;
+  width: 50%; /* Adjust width */
+  margin: 2% auto;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.6);
+}
+
+.container_regfrm_container_parent_child {
+  padding: 2%;
+  margin: 5% auto;
+  background-color: #c5d9e2;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(44, 78, 134, 0.5);
+  width: 80%;
+}
+
+.container_regfrm_container_parent_child input[type="text"],
+.container_regfrm_container_parent_child input[type="date"],
+.container_regfrm_container_parent_child select {
+  width: 20%; /* Adjust input width */
+  padding: 0.5%;
+  margin: 2%;
+  color: rgb(117, 117, 117);
+  border: 1px solid #ccc; /* Change border color */
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  font-size: 1.5vh; /* Adjust font size */
+}
+
+.container_regfrm_container_parent_child input[name="homeaddrs"],
+.container_regfrm_container_parent_child input[name="officeaddrs"] {
+  width: 94%; /* Adjust input width */
+  display: block;
+  padding: 0.5%;
+  margin: 2%;
+  color: rgb(117, 117, 117);
+  border: 1px solid #ccc; /* Change border color */
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  font-size: 1.5vh; /* Adjust font size */
+}
+
+.container_regfrm_container_parent_child input[type="submit"] {
+  width: 12%;
+  color: white;
+  font-size: 2vh; /* Adjust font size */
+  background-color: rgb(44, 78, 134);
+  border-radius: 3px;
+  box-shadow: 0px 2px black;
+  border: 0px;
+  display: block;
+  margin: 1% auto;
+  padding: 0.5%;
+}
+
+.container_regfrm_container_parent_child input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: rgba(11, 30, 89, 0.7);
+}

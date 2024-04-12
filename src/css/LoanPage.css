@@ -1,0 +1,81 @@
+/* LoanPage.css */
+
+.loan-page {
+  max-width: 10000px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.loan-types {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  gap: 50px;
+  padding-bottom: 20px;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+}
+
+.loan-card {
+  flex: 0 0 auto;
+  width: calc(33.33% - 20px); /* Set width for each card */
+  max-width: 300px; /* Maximum width of each card */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition effect */
+  overflow: hidden; /* Hide overflowing content */
+  display: flex;
+  flex-direction: column; /* Align text content vertically */
+}
+
+.loan-card:hover {
+  transform: translateY(-5px); /* Move the card up slightly on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add box shadow on hover for depth effect */
+}
+
+.loan-card h2,
+.loan-card p,
+.loan-card h3,
+.loan-card ul,
+.loan-card li strong {
+  overflow: visible; /* Ensure all content is visible */
+}
+
+.loan-card h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.loan-card p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.loan-card h3 {
+  margin-top: auto; /* Push to the bottom */
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* LoanPage.css */
+
+.loan-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto; /* Center the list horizontally */
+  text-align: left; /* Align text to the left */
+  max-width: 80%; /* Limit the width of the list */
+}
+
+.loan-card li {
+  margin-bottom: 10px; /* Increase margin for better spacing */
+  font-size: 1rem; /* Adjust font size */
+}
+
+.loan-card li strong {
+  display: block; /* Change display to block for better spacing */
+  font-weight: bold;
+  margin-bottom: 5px; /* Add margin between items */
+}
