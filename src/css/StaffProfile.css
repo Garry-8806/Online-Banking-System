@@ -1,28 +1,50 @@
+/* StaffProfile.css */
+.staff_profile_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
 .staff_options {
-    width: 50%;
-    background-color: #c5d9e2;
-    margin: 0px auto;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 5%;
-    /* //border-radius: 20px; */
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  .staff_options input {
-    font-size: 16px;
-    width: 40%;
-    height: 12%;
-    padding: 3%;
-    margin: 3%;
-    transition-duration: 0.5s;
-    background-color: #004156;
-    color: white;
-  }
-  
-  .staff_options input:hover {
-    cursor: pointer;
-    background-color: #002f3f;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  justify-items: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: auto; /* Center horizontally */
+}
+
+
+.staff_options input[type="button"] {
+  width: 400px;
+  padding: 15px; /* Increased padding */
+  font-size: 16px;
+  background-color: #004156;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.staff_options input[type="button"]:hover {
+  background-color: #325bb0;
+}
+
+/* Center the logout button */
+.staff_options .logout-btn {
+  grid-column: span 2;
+  text-align: center;
+}
+
+/* Increase the size of input fields */
+.staff_options input[type="text"],
+.staff_options input[type="password"] {
+  padding: 15px; /* Increased padding */
+  font-size: 16px;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  border-radius: 5px;
+}
+

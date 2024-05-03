@@ -1,5 +1,5 @@
 import React from 'react';
-import './footer.css';
+import './css/footer.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 
@@ -18,9 +18,12 @@ function Footer() { // Changed the function name to start with uppercase
         <div className="contact" id="contactus">
           <label>Contact Us</label>
           <ul>
-            <p>412207 India,</p><p>Pune</p>
-            <p>Mobile : 8806854380</p>
-            <p>Email: contact@reactjs_dev</p>
+          
+
+            <p style={{ color: 'white' }}>412207 India,</p><p style={{ color: 'white' }}>Pune</p>
+            <p style={{ color: 'white' }}>Mobile : 8806854380</p>
+            <p style={{ color: 'white' }}>Email: contact@reactjs_dev</p>
+            
           </ul>
         </div>
         <div className="links">
@@ -50,3 +53,4 @@ function Footer() { // Changed the function name to start with uppercase
 }
 
 export default Footer; // Export Footer
+

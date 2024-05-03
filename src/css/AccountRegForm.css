@@ -1,71 +1,88 @@
-/* LoanPage.css */
-
-::-webkit-input-placeholder {
-  font-size: 2.4vh; /* Adjust placeholder font size */
-}
-
-.container_regfrm_container_parent h3 {
-  text-align: center;
-  border: 1px solid rgba(44, 78, 134, 0.5);
-  background-color: #c5d9e2;
-  font-size: 2.5vh; /* Adjust heading font size */
-  color: rgb(44, 78, 134);
-  font-weight: 500;
-  padding: 15px;
-  width: 50%; /* Adjust width */
-  margin: 2% auto;
-  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.6);
-}
-
-.container_regfrm_container_parent_child {
-  padding: 2%;
-  margin: 5% auto;
-  background-color: #c5d9e2;
-  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(44, 78, 134, 0.5);
-  width: 80%;
-}
-
-.container_regfrm_container_parent_child input[type="text"],
-.container_regfrm_container_parent_child input[type="date"],
-.container_regfrm_container_parent_child select {
-  width: 20%; /* Adjust input width */
-  padding: 0.5%;
-  margin: 2%;
-  color: rgb(117, 117, 117);
-  border: 1px solid #ccc; /* Change border color */
+/* Basic styles */
+form {
+  max-width: 800px; /* Increased width */
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  font-size: 1.5vh; /* Adjust font size */
+  background-color: #f0f8ff; /* Faint blue background */
+  display: flex; /* Added */
+  flex-wrap: wrap; /* Added */
+  justify-content: space-between; /* Added */
+  align-items: center; /* Added */
 }
 
-.container_regfrm_container_parent_child input[name="homeaddrs"],
-.container_regfrm_container_parent_child input[name="officeaddrs"] {
-  width: 94%; /* Adjust input width */
+div {
+  margin-bottom: 15px;
+  flex-basis: calc(33.33% - 10px); /* Three fields per row */
+}
+
+label {
   display: block;
-  padding: 0.5%;
-  margin: 2%;
-  color: rgb(117, 117, 117);
-  border: 1px solid #ccc; /* Change border color */
-  border-radius: 5px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  font-size: 1.5vh; /* Adjust font size */
+  font-weight: bold;
 }
 
-.container_regfrm_container_parent_child input[type="submit"] {
-  width: 12%;
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group label {
+  margin-right: 10px;
+}
+
+input[type="radio"] {
+  margin: 10px;
+  width: auto;
+}
+
+input[type="submit"] {
+  width: calc(33.33% - 10px); /* Adjusted width for the submit button */
+}
+
+input,
+select {
+  width: calc(66.66% - 10px); /* Adjusted width for input fields */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
   color: white;
-  font-size: 2vh; /* Adjust font size */
-  background-color: rgb(44, 78, 134);
-  border-radius: 3px;
-  box-shadow: 0px 2px black;
-  border: 0px;
-  display: block;
-  margin: 1% auto;
-  padding: 0.5%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.container_regfrm_container_parent_child input[type="submit"]:hover {
-  cursor: pointer;
-  background-color: rgba(11, 30, 89, 0.7);
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  form {
+    max-width: 100%; /* Adjusted for smaller screens */
+    padding: 10px;
+  }
+
+  div {
+    flex-basis: 100%; /* One field per row */
+  }
+
+  input,
+  select,
+  button {
+    width: calc(100% - 10px); /* Adjusted width for smaller screens */
+    padding: 6px;
+  }
+}
+.submit {
+ margin-top: 20px;
+ position: relative;
+ left: 170px;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './header.css';
+import './css/header.css';
 
 function Header() {
   return (
@@ -14,7 +14,8 @@ function Header() {
       </div>
       <a href="/"><div className="logo-name">
         <div className="logo">
-          <img className="logo_img" src="images/chase.jpg" alt="Chase Logo" />
+        <img className="logo_img" style={{ width: '100px', height: '90px' }} src="images/mobile-banking-icon-for-your-website-mobile-presentation-and-logo-design-free-vector.jpg" alt="logo" />
+
         </div>
         <div className="name">
           <h5>Online Banking System</h5>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import './css/ApplyForLoan.css'; // Import CSS file for styling
-
+import "./css/ApplyForLoan.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 const LoanApplicationForm = () => {
   const [name, setName] = useState('');
@@ -31,21 +33,30 @@ const LoanApplicationForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', { name, email, phone, amount, loanType, interestRate, documents });
-    // Reset form fields
-    setName('');
-    setEmail('');
-    setPhone('');
-    setAmount('');
-    setDocuments([]);
+    try {
+      // Handle form submission here
+      const formData = { name, email, phone, amount, loanType, interestRate, documents };
+      console.log('Form submitted:', formData);
+      // Send data to backend endpoint
+      await axios.post('http://localhost:3000/Loanapplicants', formData);
+      // Reset form fields
+      setName('');
+      setEmail('');
+      setPhone('');
+      setAmount('');
+      setDocuments([]);
+      // Display success message
+      toast.success('Loan application submitted successfully!');
+    } catch (error) {
+      console.error('Error submitting loan application:', error.message);
+    }
   };
 
   return (
     <div className="form-container">
-      <h2>Loan Application Form</h2>
+      <h2 style={{color:"black"}}>Loan Application Form</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -85,8 +96,7 @@ const LoanApplicationForm = () => {
           <span className="blinking">Interest Rate: {interestRate}</span>
         </div>
         <div className="documents-section">
-          <label class="MD">Mandatory Documents:</label>
-          {/* Conditional rendering for mandatory documents */}
+          <label className="MD">Mandatory Documents:</label>
           {loanType === 'Personal Loan' && (
             <>
               <p>ID Proof:</p>
@@ -120,6 +130,7 @@ const LoanApplicationForm = () => {
         </div>
         <button type="submit">Submit</button>
       </form>
+      <ToastContainer />
     </div>
   );
 };

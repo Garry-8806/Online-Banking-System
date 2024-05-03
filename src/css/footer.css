@@ -1,0 +1,83 @@
+/* footer.css */
+footer {
+  background-color:#004156;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.follow_us,
+.contact,
+.links {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.follow_us label,
+.contact label,
+.links label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #fbfbfb;
+}
+
+.follow_us ul,
+.contact ul,
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.follow_us ul li,
+.contact ul li,
+.links ul li {
+  margin-bottom: 8px;
+}
+
+.follow_us ul li a,
+.contact ul li p,
+.links ul li a {
+  color: #ececec;
+  text-decoration: none;
+}
+
+.follow_us ul li a:hover,
+.contact ul li p:hover,
+.links ul li a:hover {
+  color: #007bff;
+}
+
+.links ul li,
+.links2 ul li {
+  margin-bottom: 5px;
+}
+
+.links ul li a,
+.links2 ul li a {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.links ul li a:hover,
+.links2 ul li a:hover {
+  color: #007bff;
+}
+
+.copyright {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #f8f8f8;
+}
+
+.bestview {
+  font-size: 12px;
+  color: #dfdfdf;
+}
+.contact{
+  color: #ececec;
+}

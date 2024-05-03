@@ -1,0 +1,83 @@
+/* StaffLogin.css */
+
+.staff_login_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  }
+
+.form {
+  width: 300px;
+  background-color: rgb(117, 113, 196);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px rgba(97, 97, 97, 0.5);
+}
+
+.login {
+  color: #f0f0f0;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input_field {
+  margin-bottom: 20px;
+}
+
+.userdetail {
+  font-weight: bold;
+  color: #4a60d0;
+  margin-bottom: 5px;
+}
+
+input[type="customer_id"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 3px solid rgba(31, 31, 31, 0.17);
+  border-radius: 5px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #42d762;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #325bb0;
+}
+
+.help {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.label_help {
+  color: #dadada;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.userloginimg {
+  display: block;
+  margin: 0 auto; /* Center horizontally */
+  margin-top: 20px; /* Add space between heading and image */
+  width: 150px; /* Adjust image size as needed */
+}
+
+.userdetail{
+color: azure;
+
+}

@@ -1,24 +1,27 @@
 // App.js
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
+import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import StaffLogin from './StaffLogin';
 import StaffProfile from './StaffProfile';
 import ActiveCustomers from './ActiveCustomers';
-import ViewCustomers_byACCNO from './ViewCustomer_byACCNO'
+import ViewCustomersByACCNO from './ViewCustomerbyACCNO';
+import ApprovePendingAccount from  './ApprovePendingAccount';
+import PendingCustomers from './pendingcutomers';
+import DeleteCustomer from './delete_customers';
 import LogoutComponent from './StaffLogout';
 import StaffProfileHeader from './StaffProfileHeader'; // Corrected import path
-
 import RegistrationForm from './AccountRegForm'; // Import the RegistrationForm component
 import DebitCardReg from './DebitCardReg';
 import FundTransfer from './FundTransfer';
-import './index.css';
-
-
+import CustomerLogin from './CustomerLogin';
 import LoanPage from './LoanPage';
 import EmiCalculator from './EmiCalculator';
 import ApplyForLoan from  "./ApplyForLoan";
+import NewLoanApplications from './Loan_Application';
+import InternetBankingServiceCustomer  from './InternetBankingServiceCustomer';
 
 
 function App() {
@@ -34,23 +37,35 @@ function App() {
           <Route path="/staff_login" element={<StaffLogin />} />
           <Route path="/staff_profile" element={<StaffProfile />} />
           <Route path="/ActiveCustomers" element={<ActiveCustomers />} />
-          <Route path="//view_customer_by_acc_no" element={<ActiveCustomers />} />
+          <Route path="/viewcustomerByAccNO" element={<ViewCustomersByACCNO />} />
+          {/* <Route path="/" element={<AccountRegConfirm />} /> */}
+          <Route path="/approveCustomer" element={<ApprovePendingAccount />} />
+          <Route path="/pending_customers" element={<PendingCustomers />} />
+          <Route path="/delete_customer" element={<DeleteCustomer />} />
+          <Route path="/InternetBankingServiceCustomer" element={<InternetBankingServiceCustomer />} />
+          <Route path="/Loan_Application" element={<NewLoanApplications/>}/>
           <Route path="/logout" element={<LogoutComponent />} />
           <Route path="/StaffProfileHeader" element={<StaffProfileHeader />} />
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/DebitCardReg" element={<DebitCardReg />} />
           <Route path="/FundTransfer" element={<FundTransfer />} />'
-          <Route path="/LoanApplication" element={<ApplyForLoan />} />'
-           <Route path="*" element={<Home />} />
-
-           <Route path="/LoanPage" element={<LoanPage />} />
-           <Route path="/emicalculator" element={<EmiCalculator />} />
+          <Route path="/CustomerLogin" element={<CustomerLogin />} />
+          <Route path="/ApplyForLoan" element={<ApplyForLoan />} />'
+          <Route path="*" element={<Home />} />
+          <Route path="/LoanPage" element={<LoanPage />} />
+          <Route path="/emicalculator" element={<EmiCalculator />} />
+          
+         
         </Routes>
         <Footer />
       </div>
     </Router>
   );
 }
+
+
+
+   
 
 
   
@@ -62,6 +77,7 @@ function Home() {
       <Slider />
       <NewsEvents />
       <OnlineServices />
+      {/* <Chatbot /> */}
       <AboutUs />
       <Disclaimer />
       {/* Use Link component to navigate to the Staff Login page */}
@@ -109,20 +125,63 @@ export function OnlineServices() {
       <ul>
       <li> <a href="/register">Open Account</a></li>
         <a href="/DebitCardReg"><li>Apply Debit Card</li></a>
-        <li id="ebanking">Internet Banking
-          <div className="ebanking_options">
-            <ul>
-              <a href="customer_login.php"><li>Login</li></a>
-              <a href="ebanking_reg_form.php"><li>Register</li></a>
-            </ul>
-          </div>
-        </li>
+        <a href="/CustomerLogin"><li>Internet Banking</li></a>
         <a href="/FundTransfer"><li>Fund Transfer</li></a>
-        <a href="/LoanApplication"><li>Apply For Loan</li></a>
+        <a href="/ApplyForLoan"><li>Apply For Loan</li></a>
       </ul>
     </div>
   );
 }
+
+// export function Chatbot() {
+//   const [messages, setMessages] = useState([
+//       { text: "Hi! How can I help you today?", sender: "bot" }
+//   ]);
+//   const [inputText, setInputText] = useState('');
+
+//   const handleInputChange = (e) => {
+//       setInputText(e.target.value);
+//   };
+
+//   const handleSubmit = (e) => {
+//       e.preventDefault();
+//       if (inputText.trim() !== '') {
+//           setMessages([...messages, { text: inputText, sender: "user" }]);
+//           setInputText('');
+//           generateBotResponse(inputText);
+//       }
+//   };
+
+//   const generateBotResponse = (userInput) => {
+//       // Replace this with your actual chatbot logic
+//       const botResponse = "I'm sorry, I'm just a demo bot. I can't perform any real actions.";
+//       setMessages([...messages, { text: botResponse, sender: "bot" }]);
+//   };
+
+//   return (
+//       <div className="chatbot-container">
+//           <div className="chatbot-messages">
+//               {messages.map((message, index) => (
+//                   <div key={index} className={`message ${message.sender}`}>
+//                       {message.text}
+//                   </div>
+//               ))}
+//           </div>
+//           <form onSubmit={handleSubmit}>
+//               <input
+//                   type="text"
+//                   placeholder="Type your message..."
+//                   value={inputText}
+//                   onChange={handleInputChange}
+//               />
+//               <button type="submit">Send</button>
+//           </form>
+//       </div>
+//   );
+// }
+
+
+
 
 export function AboutUs() {
   return (

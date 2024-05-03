@@ -1,78 +1,73 @@
-// ActiveCustomers.js
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import React, { useEffect, useState } from 'react';
-import StaffProfileHeader from './StaffProfileHeader'; // Assuming you have a StaffProfileHeader component
-import './css/ActiveCustomers.css'; // Import your CSS file
-
-const ActiveCustomers = () => {
-  const [customers, setCustomers] = useState([]);
+function ActiveCustomers() {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Fetch data from the API or database
-    const fetchData = async () => {
-      try {
-        const response = await fetch('your-api-endpoint'); // Update with your API endpoint
-        const data = await response.json();
-        setCustomers(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
+    fetchActiveCustomers();
   }, []);
 
+  const fetchActiveCustomers = () => {
+    setLoading(true);
+    axios.get('http://localhost:3000/Approved_Customers')
+      .then(response => {
+        setData(response.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        setError('Error fetching data');
+        setLoading(false);
+      });
+  };
+
   return (
-    <>
-     
-      <StaffProfileHeader />
-      <div className="active_customers_container">
-        <table border="1px" cellpadding="10">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Username</th>
-              <th>Customer ID</th>
-              <th>Account No.</th>
-              <th>Mobile No.</th>
-              <th>Email ID</th>
-              <th>DOB</th>
-              <th>Current Balance</th>
-              <th>PAN</th>
-              <th>Citizenship</th>
-              <th>Debit Card No.</th>
-              <th>CVV</th>
-              <th>Last_Login</th>
-              <th>LastTransaction</th>
-              <th>Account Status</th>
+    <div>
+      <h1>Active Customers</h1>
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Account Type</th>
+            <th>Gender</th>
+            <th>PAN Number</th>
+            <th>Initial Deposit</th>
+            <th>Mobile Number</th>
+            <th>State</th>
+            <th>District</th>
+            <th>Pin Code</th>
+            <th>Account Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map(item => (
+            <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.name}</td>
+              <td>{item.email}</td>
+              <td>{item.address}</td>
+              <td>{item.accountType}</td>
+              <td>{item.gender}</td>
+              <td>{item.panNumber}</td>
+              <td>{item.initialDeposit}</td>
+              <td>{item.mobileNumber || '-'}</td>
+              <td>{item.state || '-'}</td>
+              <td>{item.district || '-'}</td>
+              <td>{item.pinCode || '-'}</td>
+              <td>{item.accountNumber}</td>
             </tr>
-          </thead>
-          <tbody>
-            {customers.map((customer, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{customer.Username}</td>
-                <td>{customer.Customer_ID}</td>
-                <td>{customer.Account_no}</td>
-                <td>{customer.Mobile_no}</td>
-                <td>{customer.Email_ID}</td>
-                <td>{customer.DOB}</td>
-                <td>${customer.Current_Balance}</td>
-                <td>{customer.PAN}</td>
-                <td>{customer.CITIZENSHIP}</td>
-                <td>{customer.Debit_Card_No}</td>
-                <td>{customer.CVV}</td>
-                <td>{customer.Last_Login}</td>
-                <td>${customer.LastTransaction}</td>
-                <td>{customer.Account_Status}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    
-    </>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
-};
+}
 
 export default ActiveCustomers;

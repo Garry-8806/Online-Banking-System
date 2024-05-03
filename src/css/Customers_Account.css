@@ -1,0 +1,44 @@
+
+.navigation-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Align items vertically in the center */
+}
+
+.navigation-links button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 2px;
+  margin-right: 5px; /* Adjust the margin-right for space between buttons */
+  cursor: pointer;
+}
+
+.navigation-links button:last-child {
+  margin-right: 0; /* Remove margin from the last button to prevent extra spacing */
+}
+
+.navigation-links button:hover {
+  background-color: #0056b3;
+} 
+
+button{
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+.details{
+  font-size: large;
+  
+}
+.customer-details-container {
+  max-width: 200%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+}
+.login-container{
+  position: relative;
+  right: 20px;
+}
