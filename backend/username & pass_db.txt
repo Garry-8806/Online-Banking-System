@@ -1,5 +1,0 @@
-gauravsatkar8806
-UCSInBcRWOc7CgnU
-(103.149.126.46)
-
-mongodb+srv://gauravsatkar8806:UCSInBcRWOc7CgnU@cluster0.ibgo74a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
