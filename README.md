@@ -1,5 +1,6 @@
-
-
+#Some Steps to Start the Application
+1. Run the Server db .json using Command cd your [path] json-server --watch db.json.
+2. Second Command npm start.
 
 
 
